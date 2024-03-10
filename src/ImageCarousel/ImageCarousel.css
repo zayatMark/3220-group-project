@@ -1,0 +1,122 @@
+
+/* Formatting for the images in the carousel */
+.carousel-img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: "0 0";
+    box-sizing: border-box;
+    flex-shrink: 0;
+    flex-grow: 0;
+
+    border-radius: 5px; /* Round the corners */
+
+    transition: translate 400ms ease-in-out; /* Animate the position for the sliding effect */
+}
+
+.carousel-button {
+    all: unset;
+    display: block;
+    position: absolute; /* Position absolute to allow the buttons to overlap the image */
+    top: 0;
+    bottom: 0;
+    padding: 1rem;
+    cursor: pointer;
+
+    transition: background-color 200ms ease-in-out; /* Fade in the background on hover */
+
+}
+
+/* When hovered, add a transparent black tint to the side buttons*/
+.carousel-button:hover,
+.carousel-button:focus-visible {
+    background-color: rgb(0, 0, 0, 0.25);
+}
+
+/* Style the side buttons */
+.carousel-button > * {
+    stroke: black;
+    fill: white;
+    stroke-width: 1.25px; 
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+/* Round the left edge of the left button */
+.carousel-left-anim {
+    border-radius: 5px 0 0 5px;
+}
+
+/* Round the right edge of the right button */
+.carousel-right-anim {
+    border-radius: 0 5px 5px 0;
+}
+
+/* The default state of the left button icon to allow for the animation */
+.carousel-left-anim > * {
+    translate: 0rem;
+
+    transition: translate 200ms ease-in-out;
+}
+
+/* The hover state for the left button icon to make it move left on hover */
+.carousel-left-anim:hover > *,
+.carousel-left-anim:focus-visible > * {
+    translate: -0.35rem;
+}
+
+/* The default state of the right button icon to allow for the animation */
+.carousel-right-anim > * {
+    translate: 0rem;
+
+    transition: translate 200ms ease-in-out;
+}
+
+/* The hover state for the right button icon to make it move right on hover */
+.carousel-right-anim:hover > *,
+.carousel-right-anim:focus-visible > * {
+    translate: 0.35rem;
+}
+
+/* Setup the selection dot positioning and the transition for the scaling animation */
+.carousel-dot {
+    all: unset;
+    display: block;
+    cursor: pointer;
+    width: 1.25rem;
+    height: 1.25rem;
+
+    transition: scale 200ms ease-in-out;
+}
+
+/* Scale up the hovered selection dot */
+.carousel-dot:hover,
+.carousel-dot:focus-visible {
+    scale: 1.2;
+}
+
+/* Style the selected dot icon, making it white and slightly larger */
+.carousel-dot-selected {
+    fill: white;
+    stroke: black;
+    stroke-width: 2px;
+    scale: 1.1;
+    width: 100%;
+    height: 100%;
+}
+
+/* Style the unselected dot icon, making it gray and smaller than the selected dot */
+.carousel-dot-unselected {
+    fill: gray;
+    stroke: white;
+    stroke-width: 2px;
+    width: 100%;
+    height: 100%;
+}
+
+/* Restore the outline when tabbing through the elements */
+.carousel-button:focus-visible,
+.carousel-dot:focus-visible {
+    outline: auto;
+}

@@ -28,7 +28,7 @@ class VerticalDataList extends Component {
             <ul style={{listStyleType:"none", padding: "0", margin: "0"}}>
                 {
                     //Map each data object to it's own 
-                    this.data.map(d => <VerticalDataListItem data={d} key={`vertical-data-item-${d.getTitle}`} />)
+                    this.data.map(d => <VerticalDataListItem data={d} key={`vertical-data-item-${d.getTitle()}`} />)
                 }
             </ul>
         );

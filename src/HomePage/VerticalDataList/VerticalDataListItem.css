@@ -1,0 +1,43 @@
+
+/* Give each item entry a dark gray border */
+.list-item {
+    border: 3px solid darkgray;
+    border-radius: 5px;
+}
+
+/* Add a margin that spaces out list items, but doesn't apply to the one on top */
+.list-item + .list-item {
+    margin-top: 1rem;
+}
+
+/* Set the data's icon size and rounded edges */
+.list-icon {
+    height: 10vh;
+    width: 10vh;
+    border-radius: 5px;
+}
+
+/* Setup the button styling to make the button invisible */
+.list-button {
+    all: unset;
+    display: block;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    margin: 0;
+    border: 0;
+    display: flex;
+
+    transition: background-color 200ms ease-in-out; /* Have the darkening of the background from hovering transition in */
+}
+
+/* Add back the outline on tabbing to the button */
+.list-button:focus-visible {
+    outline: auto;
+}
+
+/* Add a hover/focus effect that darkens the background */
+.list-button:hover,
+.list-button:focus-visible {
+    background-color: rgb(0, 0, 0, 0.25);
+}

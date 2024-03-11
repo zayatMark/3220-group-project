@@ -4,7 +4,9 @@ import React, { Component } from 'react'
 import VerticalDataListItem from './VerticalDataListItem'
 import DataItem from './DataItem';
 
-import testImg1 from './imgs/Windsor-Image-1.jpg'
+import treeIcon from './imgs/Tree-Icon.jpg'
+import rainIcon from './imgs/Rain-Icon.jpg'
+import garbageIcon from './imgs/Garbage-Icon.jpg'
 
 class VerticalDataList extends Component {
 
@@ -13,9 +15,9 @@ class VerticalDataList extends Component {
 
         //Create the DataItem objects that will be displayed
         this.data = [
-            new DataItem(testImg1, "Tree Requests Service Requests", "Contains information on the maintenance of municipal trees that was initiated by a customer service request"),
-            new DataItem(null, "Precipitation", "Contains precipitation levels for different areas around Windsor in mm/hr"),
-            new DataItem(null, "Garbage & Recycling Collection", "Contains the collection boundaries for garbage and recycling within the city.")
+            new DataItem(treeIcon, "Tree Requests Service Requests", "Contains information on the maintenance of municipal trees that was initiated by a customer service request"),
+            new DataItem(rainIcon, "Precipitation", "Contains precipitation levels for different areas around Windsor in mm/hr"),
+            new DataItem(garbageIcon, "Garbage & Recycling Collection", "Contains the collection boundaries for garbage and recycling within the city.")
         ]
     }
 

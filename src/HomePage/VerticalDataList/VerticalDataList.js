@@ -25,7 +25,7 @@ class VerticalDataList extends Component {
 
         return (
             //List for the recently accessed data
-            <ul style={{listStyleType:"none", padding: "0", margin: "0"}}>
+            <ul style={{listStyleType:"none", padding: "0", margin: "0"}} data-testid="vertical-data-list">
                 {
                     //Map each data object to it's own 
                     this.data.map(d => <VerticalDataListItem data={d} key={`vertical-data-item-${d.getTitle()}`} />)

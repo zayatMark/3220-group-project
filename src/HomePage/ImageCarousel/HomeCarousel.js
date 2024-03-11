@@ -25,7 +25,7 @@ class HomeCarousel extends Component {
                         margin: "0 auto", 
                         paddingLeft: "5%", 
                         paddingRight: "5%"
-            }}>
+            }} data-testid="home-carousel">
                 <ImageCarousel urls={images} />
             </div>
         );

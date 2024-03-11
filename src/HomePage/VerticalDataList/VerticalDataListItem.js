@@ -16,7 +16,7 @@ class VerticalDataListItem extends Component {
                     <span style={{width:"35%", display: "flex"}}>
                         {/* Data icon centred vertically and left aligned */}
                         <span style={{verticalAlign: "middle", margin: "auto 0", padding: "0.5rem 0 0.5rem 1rem"}}>
-                            <img className='list-icon' src={(this.props.data.getIcon() === null) ? defaultIcon : this.props.data.getIcon()} alt="" />
+                            <img className='list-icon' src={(this.props.data.getIcon() === null) ? defaultIcon : this.props.data.getIcon()} alt="" data-testid="vertical-list-icon" />
                         </span>
 
                         {/* Data title, vertically centred */}

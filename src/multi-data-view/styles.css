@@ -1,0 +1,85 @@
+.grayBox {
+    background-color: rgb(179, 179, 179);
+    padding: 20px;
+    border-radius: 5px;
+    overflow: hidden; /* Clear floats */
+    width: 80%; /* doesnt fill entire screen */
+    margin: auto; /* centre box 8 */
+
+}
+
+.column {
+    width: 50%; /* Set the width of each column */
+    float: left; /* Float the columns to the left */
+    box-sizing: border-box; /* Include padding and border in the width */
+}
+
+.checkboxes {
+    margin: 10px; /* Add some margin for better spacing */
+    text-align: left; 
+    size: 20px;
+}
+
+/* Optional: Adjust label styles */
+label {
+    margin-right: 10px; /* Add some spacing between the checkbox and label */
+    font-size: 25px;
+    color: white;
+    font-weight: 500;
+}
+
+.classificationButton{
+    width: 150px; /* Set the width of the button */
+    height: 50px; /* Set the height of the button */
+    padding: 10px 20px; /* Set the padding inside the button */
+    font-size: 20px; /* Set the font size of the button text */
+    background-color: rgb(179, 179, 179); /* Set the background color */
+    color: white; /* Set the text color */
+    border-radius: 5px; /* Add rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+
+}
+
+/* Hover effect */
+.customButton:hover {
+    background-color: rgb(205, 188, 188); /* Darken the background color */
+}
+
+/* column to separate 3 columns*/
+.column3 {
+    width: 33%;
+    float: center; /* Float the columns to the center */
+    box-sizing: border-box; /* Include padding and border in the width */
+    justify-content: space-between; /* Distribute items evenly along the main axis */
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap; /* Allow flex items to wrap to new rows */
+    justify-content: center; /* Center align flex items horizontally */
+  }
+
+/* 3-column row */
+.column3 {
+    display: flex;
+    justify-content: space-between; /* Distribute items evenly along the main axis */
+    width: 100%; /* Ensure full width of the container */
+    margin: 0 auto; /* Center the columns horizontally */
+}
+
+
+.box {
+    flex: 1; /* Each box takes up equal space */
+    max-width: calc(33.33% - 10px); /* Adjust box width with margin/padding */
+    text-align: center; /* Center text inside the box */
+    background-color: lightgray; /* Background color for the box */
+    margin: 0 50px; /* Add spacing between boxes */
+    padding: 100px; /* Add padding for better appearance */
+    text-decoration: none; /* Remove default underline for anchor */
+    color: black; /* Text color */
+    margin-bottom: 30px;
+}
+
+.box:hover {
+    background-color: gray; /* Change background color on hover */
+}

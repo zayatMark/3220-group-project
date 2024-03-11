@@ -3,6 +3,7 @@ import './App.css';
 
 import React, { Component} from 'react'
 import HomeCarousel from './ImageCarousel/HomeCarousel';
+import MultiDataView from './multi-data-view/multidata';
 
 class App extends Component {
 

@@ -1,0 +1,90 @@
+/* Navbar styles */
+.navbar {
+  padding: 20px; /* Increase padding to make the navbar taller */
+  border-bottom: 1px solid #ccc; /* Add a border at the bottom of the navbar */
+}
+
+/* Top section of the navbar */
+.navbar-top {
+  display: flex;
+  align-items: center;
+}
+
+/* Service text */
+.service {
+  margin-right: auto; /* Pushes the icon to the right */
+  font-size: 22px; /* Increase font size */
+}
+
+/* Icon */
+.icon {
+  margin-left: 15px; /* Adds some space between "Services" and the icon */
+  width: 50px; /* Increase width of the icon */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Search bar container */
+.search-bar {
+  flex: 1;
+  text-align: center;
+  width: 500px;
+}
+
+/* Search input */
+.search-bar input {
+  color: #0f0f0f; /* Grey background color */
+  padding: 10px; /* Add padding to the search bar */
+  border: none; /* Remove border */
+  border-radius: 8px; /* Add border radius */
+  font-size: 18px; /* Increase font size */
+}
+
+/* Language selector container */
+
+
+.language {
+  padding-right: 30px;
+}
+
+/* Language selector */
+.language-selector {
+  margin-left: 15px;
+  font-size: 18px; /* Increase font size */
+  border: 1px solid #ccc; /* Add border */
+  padding: 5px 10px; /* Add padding */
+}
+
+.navbar-list-top {
+  list-style-type: none; /* Remove bullet points */
+  display: flex; /* Align list items horizontally */
+  padding-left: 30px;
+}
+
+/* Navbar list */
+.navbar-list-bottom {
+  list-style-type: none; /* Remove bullet points */
+  display: flex; /* Align list items horizontally */
+}
+
+/* Navbar list item */
+.navbar-item {
+  margin-right: 20px; /* Add more spacing between list items */
+  font-size: 18px; /* Increase font size */
+}
+
+/* Navbar link */
+.navbar-link {
+  text-decoration: none; /* Remove underlines from links */
+  color: black; /* Set link color */
+}
+
+.navbar-item-language {
+  margin-right: 20px; /* Add more spacing between list items */
+  font-size: 18px; /* Increase font size */
+  padding-left: 35em;
+}
+
+
+
+
+

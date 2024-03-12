@@ -3,6 +3,8 @@ import './detail-view.css';
 import arrow from '../images/arrow.png'
 import earth from '../images/earth.png'
 
+import {useParams} from "react-router-dom";
+
 class Image extends Component {
     render() {
         return (
@@ -107,15 +109,27 @@ class Dropbox extends Component {
 
 }
 
-class Overview extends Component {
-    render() {
+// class Overview extends Component {
+//     render() {
+//         return (
+//             <div>
+//                 <Image />
+//                 <Detail />
+//             </div>
+//         )
+//     }
+// }
+
+function Overview() {
+        const {id} = useParams();
+
         return (
             <div>
+                <div>{`Id is: ${id}`}</div>
                 <Image />
                 <Detail />
             </div>
         )
-    }
 }
 
 export default Overview

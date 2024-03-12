@@ -15,9 +15,9 @@ class VerticalDataList extends Component {
 
         //Create the DataItem objects that will be displayed
         this.data = [
-            new DataItem(treeIcon, "Tree Requests Service Requests", "Contains information on the maintenance of municipal trees that was initiated by a customer service request"),
-            new DataItem(rainIcon, "Precipitation", "Contains precipitation levels for different areas around Windsor in mm/hr"),
-            new DataItem(garbageIcon, "Garbage & Recycling Collection", "Contains the collection boundaries for garbage and recycling within the city.")
+            new DataItem(2, treeIcon, "Tree Requests Service Requests", "Contains information on the maintenance of municipal trees that was initiated by a customer service request"),
+            new DataItem(4, rainIcon, "Precipitation", "Contains precipitation levels for different areas around Windsor in mm/hr"),
+            new DataItem(6, garbageIcon, "Garbage & Recycling Collection", "Contains the collection boundaries for garbage and recycling within the city.")
         ]
     }
 

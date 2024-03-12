@@ -1,0 +1,156 @@
+.image {
+    float: left; 
+    margin-left: 5%; 
+    margin-top: 5%;
+}
+
+.desc {
+    margin-top: 5%;
+    margin-left: 5%;
+    text-align: left;
+}
+
+.upper {
+    display: flex;
+    
+}
+
+.button {
+    color: white;
+    background-color: #222;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    line-height: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    cursor: pointer;
+    text-align: center;
+    margin-right: 1.9rem;
+    display: inline-flex;
+    align-items: center;
+    border: none;
+  }
+  
+  .button:hover {
+    background-color: #333;
+  }
+  
+  @keyframes spin_357 {
+    from {
+      transform: rotate(0deg);
+    }
+  
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .DropSec {
+    margin-top: 3rem;
+  }
+
+  .dropdown-toggle {
+    width: 1600px;
+    height: 85px;
+    /* margin-top: 0.5rem; */
+    font-size: xx-large;
+    font-weight: 800;
+    border-radius: 20px;
+    box-sizing: border-box;
+    line-height: 4.0rem;
+    background: transparent;
+    border-color: #cdcdcd;
+    overflow: visible;
+    cursor: pointer;
+    padding-left: 3rem;
+    padding-top: 4px;
+    text-align: left;
+    
+  }
+
+  .dropdown-content {
+    width: 1590px;
+    margin-top: 10px;
+    background-color: rgba(217, 217, 217, 0.944);
+    border: 0.5px solid;
+    border-radius: 10px;
+    margin: 1rem auto 0 auto;
+    padding: 15px 5px 15px 5px;
+    font-size: x-large;
+  }
+
+  .button-icon {
+    float: right; 
+    margin-right: 2rem;
+    margin-top: 15px;
+  }
+
+  .rotated {
+    transform: rotate(-180deg);
+    transition: all .3s ease;
+    transform-origin: 50% 30%;
+  }
+
+  .not-rotated {
+    transform: rotate(-360deg);
+    transition: all .3s ease;
+    transform-origin: 50% 30%;
+  }
+
+
+  .arrow {
+    width: 50px;
+    height: 50px;
+    opacity: 0.3;
+  }
+
+  .download {
+    margin-top: 2rem;
+    padding: 0.5rem 3rem;
+    border: 0.5px solid;
+    outline: none;
+    font-size: 1.1rem;
+    border-radius: 0.3rem;
+    font-weight: 550;
+    background-color: rgba(255, 255, 255, 0.953);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+  }
+  
+  .download .text {
+    position: absolute;
+    left: 0.8rem;
+    top: 0rem;
+    transition: 0.4s ease-in-out;
+    color: rgb(50, 50, 50);
+  }
+  
+  .svg {
+    transform: translateY(-20px) rotate(30deg);
+    opacity: 0;
+    width: 2rem;
+    transition: 0.4s ease-in-out;
+  }
+  
+  .download:hover {
+    background-color: rgb(50, 50, 50);
+  }
+  
+  .download:hover .svg {
+    display: inline-block;
+    transform: translateY(0px) rotate(0deg);
+    opacity: 1;
+  }
+  
+  .download:hover .text {
+    opacity: 0;
+  }
+  
+  .download:active {
+    scale: 0.97;
+  }

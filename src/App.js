@@ -13,6 +13,7 @@ import MultiDataView from './multi-data-view/multidata';
 import HomePage from './HomePage/HomePage';
 import Overview from './components/detail-view'
 import Navbar from './Navbar/Navbar'
+import LoginForm from './LoginPage/LoginForm'
 
 class App extends Component {
 
@@ -27,6 +28,7 @@ class App extends Component {
           <Routes>
             <Route path="/" element={<HomePage />} ></Route>
             <Route path="/filter-data" element={<MultiDataView />}></Route>
+            <Route path="/login" element={<LoginForm />}></Route>
             <Route path="/data/:id" element={<Overview />}></Route>
           </Routes>
 

@@ -15,7 +15,7 @@ class Navbar extends Component {
             <p>Services</p>
           </div>
           <div className="navbar-item">
-            <img src={icon} alt="Icon" className = "icon"/>
+            <Link to="/login"><img src={icon} alt="Icon" className = "icon"/></Link>
           </div>
           <div className="navbar-item">
             <input type="text" placeholder="Search..." className="search-bar"/>

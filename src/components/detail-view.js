@@ -125,7 +125,7 @@ function Overview() {
 
         return (
             <div>
-                <div>{`Id is: ${id}`}</div>
+                <div>{`Id is: ${id}`}</div> 
                 <Image />
                 <Detail />
             </div>

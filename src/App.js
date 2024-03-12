@@ -34,7 +34,7 @@ class App extends Component {
               </Link>
             </li>
             <li>
-              <Link to="/data">
+              <Link to="/data/test-id">
                   View Data
               </Link>
             </li>
@@ -44,7 +44,7 @@ class App extends Component {
           <Routes>
             <Route path="/" element={<HomePage />} ></Route>
             <Route path="/filter-data" element={<MultiDataView />}></Route>
-            <Route path="/data" element={<Overview />}></Route>
+            <Route path="/data/:id" element={<Overview />}></Route>
           </Routes>
 
         </div>

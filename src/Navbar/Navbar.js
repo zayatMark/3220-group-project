@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
-import './NavBarStyle.css';
+import './NavbarStyle.css';
 import icon from './icon.png';
+
+import {
+  Link
+} from "react-router-dom";
 
 class Navbar extends Component {
   render() {
@@ -19,10 +23,10 @@ class Navbar extends Component {
           <div className="navbar-item-language">
           <ul className="navbar-list-top">
             <li className="navbar-item">
-              <a href="#" className="navbar-link">French</a>
+              <Link to="." className="navbar-link">French</Link>
             </li>
             <li className="navbar-item">
-              <a href="#" className="navbar-link">English</a>
+              <Link href="." className="navbar-link">English</Link>
             </li>
           </ul>
           </div>
@@ -30,19 +34,19 @@ class Navbar extends Component {
         <div className="navbar-bottom">
           <ul className="navbar-list-bottom">
             <li className="navbar-item">
-              <a href="#" className="navbar-link">Home</a>
+              <Link to="/" className="navbar-link">Home</Link>
             </li>
             <li className="navbar-item">
-              <a href="#" className="navbar-link">About Us</a>
+              <Link to="." className="navbar-link">About Us</Link>
             </li>
             <li className="navbar-item">
-              <a href="#" className="navbar-link">Community</a>
+              <Link to="." className="navbar-link">Community</Link>
             </li>
             <li className="navbar-item">
-              <a href="#" className="navbar-link">Event</a>
+              <Link to="#" className="navbar-link">Event</Link>
             </li>
             <li className="navbar-item">
-              <a href="#" className="navbar-link">Data</a>
+              <Link to="/filter-data" className="navbar-link">Data</Link>
             </li>
           </ul>
         </div>

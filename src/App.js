@@ -6,13 +6,13 @@ import React, { Component} from 'react'
 import {
   BrowserRouter,
   Routes,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
 import MultiDataView from './multi-data-view/multidata';
 import HomePage from './HomePage/HomePage';
 import Overview from './components/detail-view'
+import Navbar from './Navbar/Navbar'
 
 class App extends Component {
 
@@ -21,24 +21,7 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
 
-          {/* Temporary navitation list */}
-          <ul style={{listStyleType:"none", backgroundColor:"rgb(200, 200, 200)", marginTop:"0", padding:"1rem"}}>
-            <li>
-              <Link to="/">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link to="/filter-data">
-                  Filter Data
-              </Link>
-            </li>
-            <li>
-              <Link to="/data/test-id">
-                  View Data
-              </Link>
-            </li>
-          </ul>
+          <Navbar />
 
           {/* Define all routes to the various pages */}
           <Routes>

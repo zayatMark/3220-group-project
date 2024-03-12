@@ -15,13 +15,13 @@ class Classification extends Component {
         this.listOfFiles = new Map(); /** map that contains list of files per category */
         // Set values in the listOfFiles map
         this.listOfFiles.set('Environmental', [
-        ['Yard Waste Not Collected Service Requests', 'Text'], 
-        ['Tree Request', 'Text'], 
-        ['Street sweeping service requests', 'Text'],
-        ['Precipitation', 'Text'],
-        ['Dead Animal Removal Service Requests', 'Text'],
-        ['Garbage & Recycling Collection', 'Text'],
-        ['Parks Playgrounds Service Requests', 'Text']
+        [1, 'Yard Waste Not Collected Service Requests', 'Text'], 
+        [2, 'Tree Request', 'Text'], 
+        [3, 'Street sweeping service requests', 'Text'],
+        [4, 'Precipitation', 'Text'],
+        [5, 'Dead Animal Removal Service Requests', 'Text'],
+        [6, 'Garbage & Recycling Collection', 'Text'],
+        [7, 'Parks Playgrounds Service Requests', 'Text']
 
         ]);
         this.listOfFiles.set('Infrustructure', []);
@@ -45,7 +45,6 @@ class Classification extends Component {
                 }
             }
         }
-        console.log(entries[0])
         return entries
     }
 
@@ -55,8 +54,6 @@ class Classification extends Component {
      * @returns list of filtered file entries
      */
     filterData(values) {
-        console.log("values: " + values)
-        console.log("length: " + values[0].length)
         let filteredData = [];
     
         //checks if any categories at column 1 are selected
@@ -90,15 +87,14 @@ class Classification extends Component {
         }
         //none are selected at column 1
         else{
-            console.log("here")
             for (let value of this.listOfFiles.values()) {
                 if (value.length > 0){
                     //iterates through every array in each value in key
                     for (let arr of value) {
                         //if there is something selected in column 2
                         if (values[1].length > 0){
-                            for (value in values[1]){
-                                if (arr.includes(value)){
+                            for (const media of values[1]){
+                                if (arr.includes(media)){
                                     filteredData.push(arr);
                                 }
                             }

@@ -1,11 +1,16 @@
 
 //This class encapsulates the the information required to display a piece of data in the vertical data list
-//This includes an icon, title and a short description
+//This includes an id, icon, title and a short description
 class DataItem {
-    constructor(icon, title, shortDescription) {
+    constructor(id, icon, title, shortDescription) {
+        this.id = id
         this.icon = icon
         this.title = title
         this.shortDescription = shortDescription
+    }
+
+    getId() {
+        return this.id
     }
 
     getIcon() {

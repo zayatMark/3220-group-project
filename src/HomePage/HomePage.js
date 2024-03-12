@@ -1,4 +1,11 @@
 
+/**
+ * @author Eli Pardalis
+ * @version 1.0.0
+ * 
+ * Renders all the home page elements
+ */
+
 import React, { Component } from 'react'
 
 import HomeCarousel from './ImageCarousel/HomeCarousel';

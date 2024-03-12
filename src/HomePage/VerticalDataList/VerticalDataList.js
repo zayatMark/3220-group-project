@@ -1,4 +1,11 @@
 
+/**
+ * @author Eli Pardalis
+ * @version 1.0.0
+ * 
+ * Loads the DataItem's to display in the list and renders them in a vertical list format
+ */
+
 import React, { Component } from 'react'
 
 import VerticalDataListItem from './VerticalDataListItem'

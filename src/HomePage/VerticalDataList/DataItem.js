@@ -1,6 +1,12 @@
 
-//This class encapsulates the the information required to display a piece of data in the vertical data list
-//This includes an id, icon, title and a short description
+/**
+ * @author Eli Pardalis
+ * @version 1.0.0 
+ * 
+ * This class encapsulates the the information required to display a piece of data in the vertical data list
+ * This includes an id, icon, title and a short description
+ */
+
 class DataItem {
     constructor(id, icon, title, shortDescription) {
         this.id = id

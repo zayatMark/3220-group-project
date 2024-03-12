@@ -1,4 +1,12 @@
 
+/**
+ * @author Eli Pardalis
+ * @version 1.0.0
+ * 
+ * Renders the specified images in a carousel that allows the user to go forwards, backwards and to pick a specific image to see.
+ * It is responsible for tracking which image to display and handling changing the image.
+ */
+
 import React, { Component } from 'react'
 
 import { ArrowBigLeft, ArrowBigRight, Circle } from 'lucide-react'
@@ -19,7 +27,10 @@ class ImageCarousel extends Component {
         this.setImage = this.setImage.bind(this)
     }
 
-    //Change the imageIndex to be the previous one, wrapping around if past the beginning
+    /**
+     * Change the imageIndex to be the previous one, wrapping around if past the beginning
+     * @returns {void}
+     */
     previousImage() {
         //Subtract 1 from the index and if it is out of bounds, make it the highest valid index
         let nextIndex = this.state.imageIndex - 1
@@ -31,6 +42,10 @@ class ImageCarousel extends Component {
         this.setState({imageIndex: nextIndex})
     }
 
+    /**
+     * Change the imageIndex to be the next one, wrapping around if past the end
+     * @returns {void}
+     */
     nextImage() {
         //Add 1 to the index and if it is out of bounds, make it the lowest valid index
         let nextIndex = this.state.imageIndex + 1
@@ -42,7 +57,10 @@ class ImageCarousel extends Component {
         this.setState({imageIndex: nextIndex})
     }
 
-    //Set the imageIndex to the specified index
+    /**
+     * Set the imageIndex to the specified index
+     * @returns {void}
+     */
     setImage(index) {
         this.setState({imageIndex: index})
     }

@@ -1,4 +1,12 @@
 
+/**
+ * @author
+ * @version 1.0.0
+ * 
+ * Loads the images for the home page carousel and renders an ImageCarousel component with those images, inside 
+ * the correct space for the home page
+ */
+
 import image1 from "./imgs/Windsor-Image-1.jpg"
 import image2 from "./imgs/Windsor-Image-2.jpg"
 import image3 from "./imgs/Windsor-Image-3.jpg"

@@ -1,4 +1,11 @@
 
+/**
+ * @author Eli Pardalis
+ * @version 1.0.0
+ * 
+ * A component that renders the provided DataItem and has the functionality to open that piece of data when the element is clicked
+ */
+
 import React, {Component} from 'react'
 
 import './VerticalDataListItem.css'

@@ -109,22 +109,13 @@ class Dropbox extends Component {
 
 }
 
-// class Overview extends Component {
-//     render() {
-//         return (
-//             <div>
-//                 <Image />
-//                 <Detail />
-//             </div>
-//         )
-//     }
-// }
-
+//Has to be a functional component to use the useParams hook
 function Overview() {
         const {id} = useParams();
 
         return (
             <div>
+                {/* Added a temporary div to show the id, this can be removed once the id is passed to downstream components for loading */}
                 <div>{`Id is: ${id}`}</div> 
                 <Image />
                 <Detail />

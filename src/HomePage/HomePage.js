@@ -3,7 +3,8 @@
  * @author Eli Pardalis
  * @version 1.0.0
  * 
- * Renders all the home page elements
+ * This component is responsible for rendering the home page and contains a HomeCarousel and VerticalDataList object 
+ * that need to be rendered on the page
  */
 
 import React, { Component } from 'react'

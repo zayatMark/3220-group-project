@@ -3,8 +3,8 @@
  * @author Eli Pardalis
  * @version 1.0.0
  * 
- * Renders the specified images in a carousel that allows the user to go forwards, backwards and to pick a specific image to see.
- * It is responsible for tracking which image to display and handling changing the image.
+ * This component take a list of images and displays them in a carousel. It tracks the current index of the image to display and provides
+ * controls for the user to go to the next and previous image and to select a specific image.
  */
 
 import React, { Component } from 'react'

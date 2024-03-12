@@ -3,8 +3,7 @@
  * @author
  * @version 1.0.0
  * 
- * Loads the images for the home page carousel and renders an ImageCarousel component with those images, inside 
- * the correct space for the home page
+ * This component is responsible for providing images to an ImageCarousel and rendering it within the right spacing for the home page
  */
 
 import image1 from "./imgs/Windsor-Image-1.jpg"

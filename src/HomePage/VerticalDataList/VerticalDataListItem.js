@@ -3,7 +3,8 @@
  * @author Eli Pardalis
  * @version 1.0.0
  * 
- * A component that renders the provided DataItem and has the functionality to open that piece of data when the element is clicked
+ * This component is responsible for displaying a single DataItem that is given to it. It provides the layout of this item in within the
+ * list and provides the functionality to click it and go to the specified data overview.
  */
 
 import React, {Component} from 'react'

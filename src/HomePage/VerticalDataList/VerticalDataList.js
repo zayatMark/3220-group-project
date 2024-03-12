@@ -3,7 +3,8 @@
  * @author Eli Pardalis
  * @version 1.0.0
  * 
- * Loads the DataItem's to display in the list and renders them in a vertical list format
+ * This component is responsible for maintaining and creating and displaying a list of DataItem’s, which will be displayed inside
+ * VerticalDataListItem components.
  */
 
 import React, { Component } from 'react'

@@ -3,6 +3,8 @@ import './detail-view.css';
 import arrow from '../images/arrow.png'
 import earth from '../images/earth.png'
 
+import {useParams} from "react-router-dom";
+
 class Image extends Component {
     render() {
         return (
@@ -107,15 +109,18 @@ class Dropbox extends Component {
 
 }
 
-class Overview extends Component {
-    render() {
+//Has to be a functional component to use the useParams hook
+function Overview() {
+        const {id} = useParams();
+
         return (
             <div>
+                {/* Added a temporary div to show the id, this can be removed once the id is passed to downstream components for loading */}
+                <div>{`Id is: ${id}`}</div> 
                 <Image />
                 <Detail />
             </div>
         )
-    }
 }
 
 export default Overview

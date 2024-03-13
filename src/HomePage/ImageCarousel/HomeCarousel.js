@@ -1,4 +1,11 @@
 
+/**
+ * @author
+ * @version 1.0.0
+ * 
+ * This component is responsible for providing images to an ImageCarousel and rendering it within the right spacing for the home page
+ */
+
 import image1 from "./imgs/Windsor-Image-1.jpg"
 import image2 from "./imgs/Windsor-Image-2.jpg"
 import image3 from "./imgs/Windsor-Image-3.jpg"

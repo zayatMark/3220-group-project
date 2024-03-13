@@ -1,4 +1,12 @@
 
+/**
+ * @author Eli Pardalis
+ * @version 1.0.0
+ * 
+ * This component is responsible for rendering the home page and contains a HomeCarousel and VerticalDataList object 
+ * that need to be rendered on the page
+ */
+
 import React, { Component } from 'react'
 
 import HomeCarousel from './ImageCarousel/HomeCarousel';
@@ -15,7 +23,7 @@ class HomePage extends Component {
                 <HomeCarousel />
                 
                 {/* Recent data heading */}
-                <h2 style={{ margin: "1rem 0 0 0", paddingLeft: "5%", paddingRight: "5%", color:"rgb(50, 50, 50)" }}>
+                <h2 style={{ margin: "1rem 0 0 0", paddingLeft: "5%", paddingRight: "5%", color:"rgb(50, 50, 50)", textAlign:"left"}}>
                     Recent Data
                 </h2>
 

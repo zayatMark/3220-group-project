@@ -1,9 +1,21 @@
 
+/**
+ * @author Eli Pardalis
+ * @version 1.0.0
+ * 
+ * This component is responsible for displaying a single DataItem that is given to it. It provides the layout of this item in within the
+ * list and provides the functionality to click it and go to the specified data overview.
+ */
+
 import React, {Component} from 'react'
 
 import './VerticalDataListItem.css'
 
 import defaultIcon from './imgs/Data-Placeholder-Image.jpg'
+
+import {
+    Link
+} from "react-router-dom";
 
 class VerticalDataListItem extends Component {
 
@@ -11,8 +23,8 @@ class VerticalDataListItem extends Component {
         return (
             //List item, styled to have a border
             <li className="list-item">
-                {/* Button to click that will allow for viewing that piece of data */}
-                <button className="list-button">
+                {/* Link to click that will allow for viewing that piece of data */}
+                <Link to={`/data/${this.props.data.getId()}`} className="list-button" onClick={this.itemClicked}>
                     <span style={{width:"35%", display: "flex"}}>
                         {/* Data icon centred vertically and left aligned */}
                         <span style={{verticalAlign: "middle", margin: "auto 0", padding: "0.5rem 0 0.5rem 1rem"}}>
@@ -31,7 +43,7 @@ class VerticalDataListItem extends Component {
                             {this.props.data.getShortDescription()}
                         </span>
                     </span>
-                </button>
+                </Link>
             </li>
         );
     }

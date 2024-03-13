@@ -10,6 +10,11 @@ import React, { Component } from 'react'
 import './styles.css'; // Import the CSS file
 import Classification from './filecomponents';
 import logo from './cityofwindsor.png';
+import Overview from '../components/detail-view.js'
+
+import {
+    Link
+  } from "react-router-dom";
 
 class MultiDataView extends Component {
     constructor(props) {
@@ -36,7 +41,8 @@ class MultiDataView extends Component {
         //iterates through the list of arrays in the dataArray
         for (let i = 0; i < dataArray.length; i++) {
             let boxes = {
-              data: dataArray[i][0],
+              i: dataArray[i][0],
+              data: dataArray[i][1],
               imgSrc: logo 
             };
 
@@ -83,7 +89,8 @@ class MultiDataView extends Component {
         //iterates through the list of arrays in the filteredData 
         for (let i = 0; i < filteredData.length; i++) {
             let boxes = {
-              data: filteredData[i][0],
+              i: filteredData[i][0],
+              data: filteredData[i][1],
               imgSrc: logo //change this is the future to a unique image
             };
 
@@ -154,22 +161,23 @@ class MultiDataView extends Component {
                 <button className="classificationButton" onClick={this.clickHandler}>Filter</button>
                 <br />
                 <br />
-                {/* Render filtered boxes */}
+                {/* will initially check if the data is null*/}
+                {this.state.filteredBoxes ? (
                 <div className="column3">
-                    {/* Container for filtered boxes */}
                     <div className="container">
-                        {this.state.filteredBoxes.map((box, index) => (
-                            // Box element
-                            <a href="" className="box" key={index}>
-                                {/* Box image */}
-                                <img src={box.imgSrc} style={{ width: '100px', height: 'auto' }}/>
-                                <br/>
-                                {/* Box data */}
-                                <p style={{ fontSize: '20px' }}>{box.data}</p>
-                            </a>
-                        ))}
+                    {/* iterates throguh every box */}
+                    {this.state.filteredBoxes.map((box, index) => (
+                        <Link to={`/data/${box.i}`} className="box" key={index}>
+                        <img src={box.imgSrc} style={{ width: '100px', height: 'auto' }} />
+                        <br />
+                        <p style={{ fontSize: '20px' }}>{box.data}</p>
+                        </Link>
+                    ))}
                     </div>
                 </div>
+                ) : (
+                <p>Loading...</p>
+                )}
             </div>
         );
         

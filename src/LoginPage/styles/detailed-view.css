@@ -17,7 +17,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 20%;
-    height: 100vh;
+    height: 80vh;
     align-items: center;
     justify-content: center;
   }

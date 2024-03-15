@@ -134,7 +134,7 @@ class Overview extends Component {
         }
         
         //If the data is unique, store it into the array
-        if(dataIds[dataIds.length - 1] !== id) {
+        if(dataIds[dataIds.length - 1] !== id && 1 <= id && id <= 7) {
             dataIds.push(id);
 
             //Make a new blank array to store the finalized data

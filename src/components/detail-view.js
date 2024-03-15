@@ -137,15 +137,20 @@ class Overview extends Component {
         if(dataIds[dataIds.length - 1] !== id) {
             dataIds.push(id);
 
-            //Make a new array to store only the data up to the max
+            //Make a new blank array to store the finalized data
             let newDataIds = [];
-            newDataIds.length = dataIds.length > maxNumData ? maxNumData : dataIds.length;
 
-            //Move the data from the old array into the new one
+            //Move the data from the old array into the new one if it is either the last item or not the same as the newest
             let oldIndex = dataIds.length - newDataIds.length;
-            for(let i = 0; i < newDataIds.length; i++) {
-                newDataIds[i] = dataIds[oldIndex];
-                oldIndex++;
+            for(let i = 0; i < dataIds.length; i++) {
+                if(dataIds[i] !== id || i === dataIds.length - 1) {
+                    newDataIds.push(dataIds[i]);
+                }
+            }
+
+            //If there are too many items, shift the array to remove the old one
+            if(newDataIds.length > maxNumData) {
+                newDataIds.shift();
             }
 
             //console.log(`Old`)

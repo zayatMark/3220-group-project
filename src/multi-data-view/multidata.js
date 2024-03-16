@@ -9,7 +9,7 @@
 import React, { Component } from 'react'
 import './styles.css'; // Import the CSS file
 import Classification from './filecomponents';
-import logo from './cityofwindsor.png';
+import logo from '../images/cityofwindsor.png';
 import Overview from '../components/detail-view.js'
 
 import {
@@ -162,7 +162,7 @@ class MultiDataView extends Component {
                 <br />
                 <br />
                 {/* will initially check if the data is null*/}
-                {this.state.filteredBoxes ? (
+                {(this.state.filteredBoxes.length > 0) ? (
                 <div className="column3">
                     <div className="container">
                     {/* iterates throguh every box */}
@@ -176,9 +176,10 @@ class MultiDataView extends Component {
                     </div>
                 </div>
                 ) : (
-                <p>Loading...</p>
+                    <p style={{ fontSize: '20px' }}>No results available</p>
                 )}
             </div>
+
         );
         
     }

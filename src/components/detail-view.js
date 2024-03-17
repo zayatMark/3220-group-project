@@ -6,6 +6,7 @@ import earth from '../images/earth.png'
 import {useParams} from "react-router-dom";
 import Cookies from 'universal-cookie';
 import { useEffect } from "react";
+import Classification from "../multi-data-view/filecomponents";
 
 function withParams(Component) {
     return props => <Component {...props} params={useParams()} />
@@ -13,10 +14,11 @@ function withParams(Component) {
 
 class Image extends Component {
     render() {
+        const id = this.props.value;
         return (
             <div className='upper'>
                 <img src={earth} className='image' width={300} height={300} />
-                <Desc />
+                <Desc value = {id}/>
             </div>
 
         )
@@ -24,14 +26,49 @@ class Image extends Component {
 }
 
 class Desc extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            descriptionValues: {}
+        }
+    }
+
+    /**
+    * gets the initial data when the component mounts
+    * @return void
+    */
+    componentDidMount() {
+        const id = this.props.value;
+        this.getTags(id); 
+    }
+
+    /**
+     * 
+     * @param {*} id 
+     * @returns array of values from file
+     */
+    getTags(id){
+        const classification = new Classification()
+        const result = classification.getIdContent(id); // Fetch data from Classification component
+        this.setState({ descriptionValues: result });
+        console.log(this.state.descriptionValues['Category']);
+    }
+
+
+
     render() {
+
+        // this.setState({descriptionValues: this.getTags(id)}); 
         return (
             <div className='desc'>
                 <h1>DATA</h1>
-                <h2>Description</h2>
+                <h2>{this.state.descriptionValues['Description']}</h2>
                 <div>
-                    <button className='button'>environment</button>
-                    <button className='button'>Text</button>
+                    <button className='button'>{this.state.descriptionValues['Category']}</button>
+                    {Array.isArray(this.state.descriptionValues['Medias']) && this.state.descriptionValues['Medias'].map((media, index) => (
+                        <button key={index} className='button'>{media}</button>
+                    ))}
+
                 </div>
                 <button class="download">
                     <p class="text">
@@ -68,10 +105,11 @@ class Detail extends Component {
 }
 
 // data format
+// todo: instantiate this content from filecomponents.js
 const DATA_INFO = [
-    { id: 1, name: 'overview', content: 'this section is for overview' },
-    { id: 2, name: 'visualization', content: 'this section is for visualization' },
-    { id: 3, name: 'usecase', content: 'this section is for use cases' }
+    { id: 1, name: 'overview', content: '' },
+    { id: 2, name: 'visualization', content: '' },
+    { id: 3, name: 'usecase', content: '' }
     // etc..
 ];
 
@@ -81,9 +119,54 @@ class Dropbox extends Component {
         super(props);
         this.state = {
             isOpen: false,
-            isRotated: false
+            isRotated: false,
+            descriptionValues: [],
+            dropboxId: this.props.value
         };
     }
+
+    /**
+    * gets the initial data when the component mounts
+    * @return void
+    */
+    componentDidMount() {
+        const id = this.props.value;
+        this.getTags(id);
+         
+    }
+
+    /**
+     * 
+     * @param {*} id 
+     * @returns array of values from file
+     */
+    getTags(id){
+        const classification = new Classification();
+        const result = classification.getIdContent(id);
+            
+        //if result is illegal
+        if (typeof result != 'object' || result == null || !('Overview' in result) || !('UseCase' in result) || result.length < 4) {
+            console.error("Invalid result:", result);
+            return; // Exit the function or handle the error appropriately
+        }
+
+        else{
+            //changing the description values
+            const contentValues = {
+                    1: result['Overview'],
+                    2: 'visualization stuff (do later)',
+                    3: result['UseCase']
+                    // Add more content values as needed for other names
+            };
+
+            // Iterate over DATA_INFO and set the content for each object
+            DATA_INFO.forEach(item => {
+                item.content = contentValues[item.id];
+            });
+        }
+        
+    }
+
 
     toggleMenu = () => {
         this.setState(prevState => ({
@@ -94,19 +177,18 @@ class Dropbox extends Component {
 
     render() {
         const { isOpen, isRotated } = this.state;
-        const dropboxId = this.props.value;
 
         return (
             <div className="dropdown-menu">
                 <button className="dropdown-toggle" onClick={this.toggleMenu}>
-                    <span>{DATA_INFO[dropboxId].name}</span>
+                    <span>{DATA_INFO[this.state.dropboxId].name}</span>
                     <span className={`button-icon ${isRotated ? 'rotated' : 'not-rotated'}`}>
                         <img src={arrow} className='arrow' />
                     </span>
                 </button>
                 {isOpen && (
                     <div className="dropdown-content">
-                        {DATA_INFO[dropboxId].content}
+                        {DATA_INFO[this.state.dropboxId].content}
                     </div>
                 )}
             </div>
@@ -169,9 +251,8 @@ class Overview extends Component {
         return (
         <div>
             {/* Added a temporary div to show the id, this can be removed once the id is passed to downstream components for loading */}
-            <div>{`Id is: ${id}`}</div> 
-            <Image />
-            <Detail />
+            <Image  value={id}/>
+            <Detail value={id}/>
         </div>
         );
     }

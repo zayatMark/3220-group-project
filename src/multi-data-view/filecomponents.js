@@ -4,6 +4,7 @@
  * 
  * This class with classify the different csv files in the City of Windsor portal 
  * Checks if values are being from checkbox
+ * this class acts as the information expert
  */
 
 
@@ -14,20 +15,56 @@ class Classification extends Component {
         super()
         this.listOfFiles = new Map(); /** map that contains list of files per category */
         // Set values in the listOfFiles map
+        // todo: add more information here
         this.listOfFiles.set('Environmental', [
-        [1, 'Yard Waste Not Collected Service Requests', 'Text'], 
-        [2, 'Tree Request', 'Text'], 
-        [3, 'Street sweeping service requests', 'Text'],
-        [4, 'Precipitation', 'Text'],
-        [5, 'Dead Animal Removal Service Requests', 'Text'],
-        [6, 'Garbage & Recycling Collection', 'Text'],
-        [7, 'Parks Playgrounds Service Requests', 'Text']
+        [1, 'Yard Waste Not Collected Service Requests', 'Information on the reports of uncollected yard waste within the city.', 'usecase content here1', ['Text', 'Videos']], 
+        [2, 'Tree Request', 'Dataset of customer initiated service requests for residential street cleaning.', 'usecase content2', ['Text']], 
+        [3, 'Street sweeping service requests', 'Information about precipitation in the city at various locations in mm/hr.', 'usecase content3', ['Text']],
+        [4, 'Precipitation', 'Information about precipitation in the city at various locations in mm/hr.', 'usecase content4', ['Text']],
+        [5, 'Dead Animal Removal Service Requests', 'Data on the removal of dead dogs or cats on public property that is initiated by customer service requests.', 'usecase content5', ['Text']],
+        [6, 'Garbage & Recycling Collection', 'Information on the collection boundaries for garbage and recycling within the city.', 'usecase content6', ['Text']],
+        [7, 'Parks Playgrounds Service Requests', 'Data about customer initiated service requests of service required for playgrounds.', 'usecase content7', ['Text']]
 
         ]);
         this.listOfFiles.set('Infrustructure', []);
         this.listOfFiles.set('Legal/Issues', []);
         this.listOfFiles.set('Transportation', []);
         this.listOfFiles.set('Recreational/Educational', []);
+    }
+
+    /**
+     * gets the list of content at a certain unique id
+     * @param id : int
+     * @returns dictionary of content values
+     */
+    getIdContent(id){
+        const content = {'Category': '', 'Description': '', 'Medias': [], 'Overview': '', 'UseCase': '' };
+        let flag = 0; // Used to track if an id is found
+        try {
+            for (let key of this.listOfFiles.keys()) {
+                for (let arr of this.listOfFiles.get(key)) {
+                    console.log(arr);
+                    console.log("array[0]:" + arr.at(0));
+                    if (arr.at(0) == id) {
+                        flag = -1;
+                        content['Category'] = key;
+                        content['Description'] = arr.at(1);
+                        content['Medias'] = Array.isArray(arr.at(4)) ? arr.at(4) : [];
+                        content['Overview'] = arr.at(2);
+                        content['UseCase'] = arr.at(3);
+                        
+                        flag = -1;
+                        return content;
+                    }
+                }
+            }
+            if (flag !== -1) {
+                throw "ERROR: page doesn't exist";
+            }
+        } catch (err) {
+            console.error(err);
+        }
+
     }
 
     /**
@@ -67,8 +104,8 @@ class Classification extends Component {
                     if (values[1].length > 0){
                         for (const value of this.listOfFiles.get(category)){
                             //go through media options
-                            for (const categories of values[1]){
-                                if (value.includes(categories)){
+                            for (const media of values[1]){
+                                if (value.at(4).includes(media)){
                                     filteredData.push(value);
                                 }
                             }
@@ -94,7 +131,7 @@ class Classification extends Component {
                         //if there is something selected in column 2
                         if (values[1].length > 0){
                             for (const media of values[1]){
-                                if (arr.includes(media)){
+                                if (arr.at(4).includes(media)){
                                     filteredData.push(arr);
                                 }
                             }

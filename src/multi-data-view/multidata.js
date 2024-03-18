@@ -10,7 +10,6 @@ import React, { Component } from 'react'
 import './styles.css'; // Import the CSS file
 import Classification from './filecomponents';
 import logo from '../images/cityofwindsor.png';
-import Overview from '../components/detail-view.js'
 
 import {
     Link
@@ -117,7 +116,7 @@ class MultiDataView extends Component {
                             <label htmlFor="topic1">RECREATIONAL/EDUCATIONAL</label>
                             <br/><br />
                             {/* Checkbox for Transportational */}
-                            <input type="checkbox" id="topic2" name="topic" value="Transportational" />
+                            <input type="checkbox" id="topic2" name="topic" value="Transportation" />
                             <label htmlFor="topic2">TRANSPORTATION</label>
                             <br /><br />
                             {/* Checkbox for Legal/Issues */}

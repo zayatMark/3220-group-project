@@ -14,6 +14,7 @@ import HomePage from './HomePage/HomePage';
 import Overview from './components/detail-view'
 import Navbar from './Navbar/Navbar'
 import LoginForm from './LoginPage/LoginForm'
+import Data from './components/data';
 
 class App extends Component {
 

@@ -8,7 +8,8 @@ class DisplayCSVData extends Component {
     super(props)
 
     this.state = {
-      csvData: []
+      csvData: [],
+      isDataReduced: false
     }
 
     this.componentDidMount = this.componentDidMount.bind(this);
@@ -29,7 +30,7 @@ class DisplayCSVData extends Component {
 
         // Create a new array of data that is capped to a maximum number of rows to display
         let reducedData = [];
-        const maxSize = 10;
+        const maxSize = 200;
 
         //Move the data that should be included into the new array
         for(let i in result.data) {
@@ -39,8 +40,9 @@ class DisplayCSVData extends Component {
           }
         }
 
-        // Update the state with the parsed data
+        // Update the state with the parsed data and update the state for if the data was truncated
         this.setState({csvData: reducedData});
+        this.setState({isDataReduced: result.data.length > maxSize});
 
       } catch (error) {
         console.log("here1");
@@ -73,6 +75,9 @@ class DisplayCSVData extends Component {
             ))}
           </tbody>
         </table>
+        
+        {/* Display a message about the data being the data being reduced if it is not all displayed */}
+        { this.state.isDataReduced ? <p><b>To see the rest of the data, download the file</b></p> : <div style={{display:"none"}} /> }
       </div>
     );
   }

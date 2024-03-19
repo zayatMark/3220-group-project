@@ -40,7 +40,8 @@ class Desc extends Component {
 
     handleDownload = async () => {
         try {
-            const { fileName, filePath } = this.state.descriptionValues;
+            const { fileName } = this.state.descriptionValues;
+            const filePath = `/${fileName}.csv`; 
             const response = await fetch(filePath); 
             const csvText = await response.text();
             const element = document.createElement('a');
@@ -54,6 +55,7 @@ class Desc extends Component {
             console.error('Error fetching or downloading CSV file:', error);
         }
     }
+    
 
     render() {
 

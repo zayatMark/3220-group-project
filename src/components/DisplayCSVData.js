@@ -18,8 +18,20 @@ function DisplayCSVData({ fileName, filePath }) {
         // Parse the CSV text using Papaparse library with header row enabled
         const result = Papa.parse(csvText, { header: true });
 
+        // Create a new array of data that is capped to a maximum number of rows to display
+        let reducedData = [];
+        const maxSize = 200;
+
+        //Move the data that should be included into the new array
+        for(let i in result.data) {
+          reducedData.push(result.data[i]);
+          if(reducedData.length >= maxSize) {
+            break;
+          }
+        }
+
         // Update the state with the parsed data
-        setCsvData(result.data);
+        setCsvData(reducedData);
       } catch (error) {
         console.log("here1");
         console.error('Error fetching CSV file:', error);

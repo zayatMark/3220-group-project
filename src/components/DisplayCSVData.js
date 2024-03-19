@@ -1,18 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React, { Component } from 'react';
 import Papa from 'papaparse'; 
 
-// This functional component renders CSV data in a table format
-function DisplayCSVData({ fileName, filePath }) {
-  // State variable to hold the parsed CSV data
-  const [csvData, setCsvData] = useState([]);
+// This class component renders CSV data in a table format
+class DisplayCSVData extends Component {
 
-  // useEffect hook to fetch and parse CSV data on component mount or filePath change
-  useEffect(() => {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      csvData: []
+    }
+
+    this.componentDidMount = this.componentDidMount.bind(this);
+    this.componentDidMount();
+  }
+
+  // componentDidMount to fetch and parse CSV data on component mount or filePath change
+  componentDidMount() {
     const fetchData = async () => {
       try {
 
         // Fetch the CSV file content
-        const response = await fetch(filePath);
+        const response = await fetch(this.props.filePath);
         const csvText = await response.text();
 
         // Parse the CSV text using Papaparse library with header row enabled
@@ -20,7 +29,7 @@ function DisplayCSVData({ fileName, filePath }) {
 
         // Create a new array of data that is capped to a maximum number of rows to display
         let reducedData = [];
-        const maxSize = 200;
+        const maxSize = 10;
 
         //Move the data that should be included into the new array
         for(let i in result.data) {
@@ -31,7 +40,8 @@ function DisplayCSVData({ fileName, filePath }) {
         }
 
         // Update the state with the parsed data
-        setCsvData(reducedData);
+        this.setState({csvData: reducedData});
+
       } catch (error) {
         console.log("here1");
         console.error('Error fetching CSV file:', error);
@@ -39,31 +49,33 @@ function DisplayCSVData({ fileName, filePath }) {
     };
 
     fetchData();
-  }, [filePath]);
+  }
 
-  return (
-    <div>
-      <h2>{fileName}</h2>
-      <table style={{ borderCollapse: 'collapse', width: '100%' }}>
-        <thead>
-          <tr>
-            {csvData.length > 0 && Object.keys(csvData[0]).map((header, index) => (
-              <th key={index} style={{ border: '1px solid #dddddd', padding: '8px', textAlign: 'left', backgroundColor: 'grey' }}>{header}</th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {csvData.map((row, rowIndex) => (
-            <tr key={rowIndex}>
-              {Object.values(row).map((cell, cellIndex) => (
-                <td key={cellIndex} style={{ border: '1px solid #dddddd', padding: '8px', textAlign: 'left' }}>{cell}</td>
+  render() {
+    return (
+      <div>
+        <h2>{this.props.fileName}</h2>
+        <table style={{ borderCollapse: 'collapse', width: '100%' }}>
+          <thead>
+            <tr>
+              {this.state.csvData.length > 0 && Object.keys(this.state.csvData[0]).map((header, index) => (
+                <th key={index} style={{ border: '1px solid #dddddd', padding: '8px', textAlign: 'left', backgroundColor: 'grey' }}>{header}</th>
               ))}
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
+          </thead>
+          <tbody>
+            {this.state.csvData.map((row, rowIndex) => (
+              <tr key={rowIndex}>
+                {Object.values(row).map((cell, cellIndex) => (
+                  <td key={cellIndex} style={{ border: '1px solid #dddddd', padding: '8px', textAlign: 'left' }}>{cell}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    );
+  }
 }
 
 export default DisplayCSVData;

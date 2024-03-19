@@ -40,7 +40,7 @@ class Classification extends Component {
             [12, 'Parks as Points', 'Data that contains the name and coordinates of each City\'s Parks', 'Useful for tourists or locals of Windsor', ['Text'], 'Parks_Centroids'],
             [13, 'Arenas', 'Data that contains information about arenas in Windsor including Name, Address, URL, and X and Y coordinates', 'Useful for tourists or locals of Windsor', ['Text'], 'Arenas'],
             [14, 'Schools', 'Data that contains location of various schools within boundary of the City of Windsor', 'Useful for families with children living in Windsor', ['Text'], 'Schools'],
-            [14, 'Community Centres', 'Data that contains name, address, URL, and X and Y coordinates of City\'s owned and operated community centres', 'Useful for tourists or locals of Windsor', ['Text'], 'Community_Centres']
+            [15, 'Community Centres', 'Data that contains name, address, URL, and X and Y coordinates of City\'s owned and operated community centres', 'Useful for tourists or locals of Windsor', ['Text'], 'Community_Centres']
         ]);
     }
 

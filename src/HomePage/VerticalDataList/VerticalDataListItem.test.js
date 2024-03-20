@@ -1,11 +1,12 @@
 import { render, screen } from '@testing-library/react';
 import VerticalDataListItem from './VerticalDataListItem';
 import DataItem from './DataItem';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 test('renders vertical data list item', () => {
     //Create the dataItem and render the vertical data list item
-    const dataItem = new DataItem(null, "Title 1", "Description 1");
-    render(<VerticalDataListItem data={dataItem}/>);
+    const dataItem = new DataItem(1, null, "Title 1", "Description 1");
+    render(<BrowserRouter><Routes><Route path="/" element={<VerticalDataListItem data={dataItem} key={`vertical-data-item-${dataItem.getTitle()}`} />}></Route></Routes></BrowserRouter>);
 
     //Check that the title is there
     const titleElement = screen.getByText("Title 1");

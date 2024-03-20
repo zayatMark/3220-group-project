@@ -25,6 +25,7 @@ class MultiDataView extends Component {
         }
         this.clickHandler = this.clickHandler.bind(this); /** instantiates the clickHandler method */
 
+        this.classification = new Classification(); //Create a classification object
     }
 
     /**
@@ -32,8 +33,7 @@ class MultiDataView extends Component {
      * @return void
      */
     getData() {
-        const classification = new Classification();
-        const dataArray = classification.getListOfFiles(); // Fetch data from Classification component
+        const dataArray = this.classification.getListOfFiles(); // Fetch data from Classification component
 
         let boxesData = []
         
@@ -79,9 +79,8 @@ class MultiDataView extends Component {
         // Create a 2D array where the first level contains checked values for 'topic' and the second level contains checked values for 'media'
         //example --> const checkedValues = [['Environmental', 'Transportational'], ['Text']]; 
         const checkedValues = [checkedTopicValues, checkedMediaValues];
-        const classification = new Classification(); // Instantiate the Classification class
 
-        const filteredData = classification.filterData(checkedValues);
+        const filteredData = this.classification.filterData(checkedValues);
 
         let boxesData = []
         

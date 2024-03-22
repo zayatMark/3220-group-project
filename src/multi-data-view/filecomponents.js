@@ -15,7 +15,7 @@ class Classification extends Component {
         super()
         this.listOfFiles = new Map(); /** map that contains list of files per category */
         // Set values in the listOfFiles map
-        // todo: add more information here
+
         this.listOfFiles.set('Environmental', [
         [1, 'Yard Waste Not Collected Service Requests', 'Information on the reports of uncollected yard waste within the city.', 'Useful for workers or volunteers managing yard waste', ['Text'], 'Yard_Waste_Not_Collected_YTD'], 
         [2, 'Tree Request', 'Data on the maintenance of municipal trees that is initiated by customer service requests.', 'Useful for workers or volunteers managing maintance of trees', ['Text'], 'Tree_Request_YTD'], 
@@ -26,7 +26,7 @@ class Classification extends Component {
         [7, 'Parks Playgrounds Service Requests', 'Data about customer initiated service requests of service required for playgrounds.', 'Useful for workers who do park maintance', ['Text'], 'Parks_Playground_Issues_YTD']
 
         ]);
-        this.listOfFiles.set('Infrustructure', [
+        this.listOfFiles.set('Infrastructure', [
             [8, 'Alley Repair / Flooding Services Requests', 'Information on the reports of open paved alley maintenance', 'Useful for workers or volunteers managing street maintance', ['Text'], 'Alley_Repair_Flooding_YTD'], 
             [9, 'Building Conditions Service Requests', 'Data on unsafe building conditions for residential, apartments, industrial, commercial properties', 'Useful for workers who work in construction or engineers', ['Text'], 'Building_Conditions_YTD'], 
         ]);
@@ -55,8 +55,7 @@ class Classification extends Component {
         try {
             for (let key of this.listOfFiles.keys()) {
                 for (let arr of this.listOfFiles.get(key)) {
-                    console.log(arr);
-                    console.log("array[0]:" + arr.at(0));
+
                     if (arr.at(0) == id) {
                         flag = -1;
                         content['Category'] = key;
@@ -155,8 +154,7 @@ class Classification extends Component {
                         }
                     }
                 }
-            }
-            
+            }            
         }
 
         return filteredData;

@@ -127,7 +127,7 @@ class MultiDataView extends Component {
                             <label htmlFor="topic4">ENVIRONMENTAL</label>
                             <br /><br />
                             {/* Checkbox for Infrastructure */}
-                            <input type="checkbox" id="topic5" name="topic" value="Infrustructure" />
+                            <input type="checkbox" id="topic5" name="topic" value="Infrastructure" />
                             <label htmlFor="topic5">INFRASTRUCTURE</label>
                             <br /><br />
                         </div>

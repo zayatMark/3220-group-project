@@ -61,21 +61,25 @@ class DisplayCSVData extends Component {
           <thead>
             <tr>
               {this.state.csvData.length > 0 && Object.keys(this.state.csvData[0]).map((header, index) => (
+                (index < 10) ? (
                 <th key={index} style={{ border: '1px solid #dddddd', padding: '8px', textAlign: 'left', backgroundColor: 'grey' }}>{header}</th>
-              ))}
+                ) : null 
+                ))}
             </tr>
           </thead>
           <tbody>
-            {this.state.csvData.map((row, rowIndex) => (
+          {this.state.csvData.map((row, rowIndex) => (
               <tr key={rowIndex}>
                 {Object.values(row).map((cell, cellIndex) => (
+                  (cellIndex < 10) ? (
                   <td key={cellIndex} style={{ border: '1px solid #dddddd', padding: '8px', textAlign: 'left' }}>{cell}</td>
-                ))}
+                  ) : null
+                  ))}
               </tr>
-            ))}
+          ))}
           </tbody>
         </table>
-        
+
         {/* Display a message about the data being the data being reduced if it is not all displayed */}
         { this.state.isDataReduced ? <p><b>To see the rest of the data, download the file</b></p> : <div style={{display:"none"}} /> }
       </div>

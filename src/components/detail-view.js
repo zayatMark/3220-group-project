@@ -1,4 +1,9 @@
-import React, { Component, useState } from 'react'
+/**
+ * @version 1.0.0
+ * this classes handles recent data (usinng Cookies) and passes unique id to Image and Detail class
+ */
+
+import React, { Component } from 'react'
 import './detail-view.css';
 
 import {useParams} from "react-router-dom";
@@ -48,9 +53,6 @@ class Overview extends Component {
                 newDataIds.shift();
             }
 
-            //console.log(`Old`)
-            //console.log(dataIds);
-            //console.log(newDataIds);
 
             //Store the new data into the cookie
             cookies.set('recent-data-ids', newDataIds, {path: "/", expires: new Date(Date.now()+2592000), maxAge: 1000000});

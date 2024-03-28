@@ -9,7 +9,7 @@
 import React, { Component } from 'react'
 import './styles.css'; // Import the CSS file
 import Classification from './filecomponents';
-import logo from '../images/cityofwindsor.png';
+import logo from './cityofwindsor.png';
 
 import {
     Link

@@ -1,20 +1,18 @@
-import React, { Component, useState } from 'react'
+/**
+ * @version 1.0.0
+ * this class handles the tags and download button at the top of the individual data view page
+ */
+
+
+import React, { Component } from 'react'
 import './detail-view.css';
-import arrow from '../images/arrow.png'
-import earth from '../images/earth.png'
-
-import {useParams} from "react-router-dom";
-import Cookies from 'universal-cookie';
-import { useEffect } from "react";
 import Classification from "../multi-data-view/filecomponents";
-import DisplayCSVData from './DisplayCSVData';
-
 
 class Desc extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            descriptionValues: {}
+            descriptionValues: {} /* get description values from records */
         }
     }
 
@@ -38,6 +36,7 @@ class Desc extends Component {
         this.setState({ descriptionValues: result });
     }
 
+    //handler for clicking the download buttonn
     handleDownload = async () => {
         try {
             const { fileName } = this.state.descriptionValues;
@@ -56,10 +55,8 @@ class Desc extends Component {
         }
     }
     
-
+    //rendered html components on the screen
     render() {
-
-        // this.setState({descriptionValues: this.getTags(id)}); 
         return (
             <div className='desc'>
                 <h1>DATA</h1>

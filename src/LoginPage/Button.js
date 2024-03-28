@@ -1,3 +1,8 @@
+/** 
+ * @version 1.0.0
+ * this class contains the template for the login button
+ */
+
 // Button Component
 import React, {Component} from 'react'
 import './styles/detailed-view.css'

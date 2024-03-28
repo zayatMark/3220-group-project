@@ -1,3 +1,8 @@
+/**
+ * @version 1.0.0
+ * This class handles the navigation bar components in each page of website
+ */
+
 import React, { Component } from 'react';
 import './NavbarStyle.css';
 import icon from './icon.png';
@@ -15,22 +20,27 @@ class Navbar extends Component {
             <p>Services</p>
           </div>
           <div className="navbar-item">
+            {/* login button */}
             <Link to="/login"><img src={icon} alt="Icon" className = "icon"/></Link>
           </div>
           <div className="navbar-item">
+            {/* search button */}
             <input type="text" placeholder="Search..." className="search-bar"/>
           </div>
           <div className="navbar-item-language">
           <ul className="navbar-list-top">
             <li className="navbar-item">
+              {/* button for french translation */}
               <Link to="." className="navbar-link">French</Link>
             </li>
             <li className="navbar-item">
+              {/* button for english translation */}
               <Link href="." className="navbar-link">English</Link>
             </li>
           </ul>
           </div>
         </div>
+        {/* buttons for the different navigation pages (home, about us, data, etc) */}
         <div className="navbar-bottom">
           <ul className="navbar-list-bottom">
             <li className="navbar-item">

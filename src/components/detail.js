@@ -1,8 +1,13 @@
+/**
+ * @version 1.0.0
+ * adds functionality to each dropbox screen component
+ * Sends unique id and dropbox id to Dropbox class 
+ */
+
+
 import React, { Component, useState } from 'react'
 import './detail-view.css';
 import Dropbox from "./dropbox";
-
-//todo: get not just dropdown value, but also file id
 
 class Detail extends Component {
     constructor(props) {

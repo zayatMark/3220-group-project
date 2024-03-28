@@ -1,3 +1,9 @@
+/**
+ * @version 1.0.0
+ * this class contains buttons with social media icons (purpose is to direct user to a social media page)
+ */
+
+
 import React, {Component} from 'react'
 import Button from './Button';
 import './styles/detailed-view.css'

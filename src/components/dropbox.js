@@ -1,6 +1,11 @@
-import React, { Component, useState } from 'react'
+/**
+ * @version 1.0.0
+ * displays content from each dropbox depending on which dropbox id and unique content id is passed
+ */
+
+import React, { Component } from 'react'
 import './detail-view.css';
-import arrow from '../images/arrow.png'
+import arrow from './images/arrow.png'
 import Classification from "../multi-data-view/filecomponents";
 import Data from './data';
 
@@ -67,7 +72,7 @@ class Dropbox extends Component {
         
     }
 
-
+    //checks for the state of dropbox
     toggleMenu = () => {
         this.setState(prevState => ({
             isOpen: !prevState.isOpen,
@@ -84,7 +89,7 @@ class Dropbox extends Component {
                 <div className="dropdown-menu">
                     <button className="dropdown-toggle" onClick={this.toggleMenu}>  
 
-                        
+                        {/* displays the name of the dropbox and checks if it has been rotated or not */}
                         <span>{DATA_INFO[this.state.dropboxId].name}</span>
                         <span className={`button-icon ${isRotated ? 'rotated' : 'not-rotated'}`}>
                             <img src={arrow} className='arrow' />
@@ -94,6 +99,7 @@ class Dropbox extends Component {
 
                     {isOpen && (
                         <div>
+                            {/* case: the name of dropbox is classification: need to make an instance of Data class */}
                             {DATA_INFO[this.state.dropboxId].name.toLowerCase() === 'visualization' ? (
                                 <div className="dropdown-content">
                                     <Data value={this.state.file_id}/> 

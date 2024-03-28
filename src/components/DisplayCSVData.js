@@ -1,7 +1,11 @@
+/**
+ * @version 1.0.0
+ * This class component renders CSV data in a table format
+ */
+
 import React, { Component } from 'react';
 import Papa from 'papaparse'; 
 
-// This class component renders CSV data in a table format
 class DisplayCSVData extends Component {
 
   constructor(props) {

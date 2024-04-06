@@ -1,6 +1,21 @@
 # 3220 Group Project
  
+| Content        |
+| -------------- |
+| Brief Overview |
+| Functionality  |
+| File Overview  |
+| Installation   |
+
+<br/>
 A web portal for viewing Windsor open data sets built using react. It allows for quality of life features like data filtering and data previews, in addition to allowing downloads.
+
+## Functionality
+The following features are work in the current iteration:
+- The home page is has a working image carousel and correctly displays recently viewed data as long as cookies are enabled.
+- The login page can be viewed by clicking on the logged out user icon but there isn't login functionality.
+- The data tab can be accessed and all filtering options except for the media type ones (text, video, etc) work and all the data can be clicked on for further information.
+- The individual data view allows for downloading the data and clicking on the dropdowns allows for viewing further information, including a preview of the data in a table.
 
 ## File Overview
 - App.js - Responsible for page routing and page rendering. Always renders the Navbar.

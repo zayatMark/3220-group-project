@@ -16,6 +16,7 @@ The following features are work in the current iteration:
 - The login page can be viewed by clicking on the logged out user icon but there isn't login functionality.
 - The data tab can be accessed and all filtering options except for the media type ones (text, video, etc) work and all the data can be clicked on for further information.
 - The individual data view allows for downloading the data and clicking on the dropdowns allows for viewing further information, including a preview of the data in a table.
+- A demo of the application being used can be found at https://www.youtube.com/watch?v=2JY9l_ED2a4 
 
 ## File Overview
 - App.js - Responsible for page routing and page rendering. Always renders the Navbar.
